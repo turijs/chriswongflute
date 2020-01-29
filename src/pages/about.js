@@ -16,7 +16,6 @@ import GatsbyImg from 'gatsby-image'
 
 
 const AboutPage = ({data}) => {
-  console.log(data.bioImage.fluidChild.fluid)
   return (
     <Layout>
       <SEO title="About" />

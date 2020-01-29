@@ -2,6 +2,7 @@ import Typography from 'typography';
 import 'typeface-inconsolata'
 import 'typeface-zilla-slab'
 import 'typeface-montserrat'
+import {MQ2} from './constants'
 
 const typography = new Typography({
   baseFontSize: '18px',
@@ -10,6 +11,10 @@ const typography = new Typography({
   bodyFontFamily: ['Zilla Slab', 'serif'],
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
     body: { width: '100%' },
+    
+    [MQ2]: {
+      html: { fontSize: '16px' }
+    },
 
     'h1,h2,h3,h4,h5,h6': {
       textAlign: 'center',

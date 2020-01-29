@@ -41,7 +41,7 @@ const buttonStyle = css`
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
-    <Container width="700px">
+    <Container width="650px">
       <Article>
         <h1>Contact</h1>
         <form action="">

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React, {useState} from "react"
 import styled from "@emotion/styled"
 import {css, Global} from "@emotion/core"
-import {colors} from '../styles/constants'
+import {colors, MQ1, MQ2} from '../styles/constants'
 import {adjustFontSizeTo, rhythm} from '../styles/typography'
 import Container from "./container"
 
@@ -11,11 +11,9 @@ import Container from "./container"
 const nav = [
   {title: 'About', to: '/about/'},
   {title: 'Media', to: '/media/'},
+  {title: 'Concerts', to: '/concerts/'},
   {title: 'Contact', to: '/contact/'},
 ]
-
-const MQ1 = '@media (max-width: 700px)';
-const MQ2 = '@media (max-width: 400px)';
 
 const headerStyle = css`
   margin: ${rhythm(1)} 0;
@@ -49,7 +47,7 @@ const Menu = styled.ul`
   margin: 0;
   text-transform: uppercase;
   /* font-weight: bold; */
-  ${adjustFontSizeTo('110%')}
+  /* ${adjustFontSizeTo('110%')} */
   ${MQ1} {
     display: ${p => p.active ? 'block' : 'none'};
     position: fixed;
