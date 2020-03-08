@@ -51,6 +51,7 @@ const ContactPage = () => (
           </Columns>
           <textarea css={css`resize: vertical; ${inputStyle}`} name="message" placeholder="Message" rows="5" />
           <div css={{textAlign: 'center'}}><input css={buttonStyle} type="submit" /></div>
+          <input name="form-name" value="contact" type="hidden" />
         </form>
       </Article>
     </Container>
