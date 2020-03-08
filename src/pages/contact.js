@@ -44,7 +44,7 @@ const ContactPage = () => (
     <Container width="650px">
       <Article>
         <h1>Contact</h1>
-        <form action="">
+        <form data-netlify="true">
           <Columns n={{2: '500px'}} gap={rhythm(1/2)}>
             <input css={inputStyle} name="name" placeholder="Name" required />
             <input css={inputStyle} name="email" type="email" placeholder="Email" required />
