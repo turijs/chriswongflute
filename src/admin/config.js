@@ -15,6 +15,7 @@ const events = {
   label_singular: 'Concert',
   folder: 'content/events',
   create: true,
+  slug: '{{year}}-{{month}}-{{day}}_{{slug}}',
   fields: [
     { name: 'title' },
     { name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', dateFormat: 'MM/DD/YYYY', timeFormat: false },

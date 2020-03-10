@@ -3,15 +3,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Article from '../components/article'
 import Container from '../components/container'
-import Event from '../components/event'
+import Event, {CompactEvent} from '../components/event'
 
 import SEO from '../components/seo'
 
-import {parseISO, add} from 'date-fns';
+import {parse} from 'date-fns';
 
-function renderEvent({frontmatter: {title, date, time, location}, fields: {path}}) {
-  const datetime = add(parseISO(date), {minutes: time});
-  return <Event key={path} title={title} datetime={datetime} location={location} />
+function renderEvent({frontmatter: {title, date, time, location}, fields: {path}}, EventComp = Event) {
+  const datetime = parse(`${date} ${time}`, 'yyyy-MM-dd HH:mm', new Date());
+  return <EventComp key={path} title={title} datetime={datetime} location={location} />
 }
 
 const EventsPage = ({data}) => {  
@@ -24,7 +24,7 @@ const EventsPage = ({data}) => {
           {data.future.nodes.map(renderEvent)}
 
           {data.past.nodes.length && <h2>Past</h2>}
-          {data.past.nodes.map(renderEvent)}
+          {data.past.nodes.map(node => renderEvent(node, CompactEvent))}
         </Article>
       </Container>
     </Layout>

@@ -47,3 +47,9 @@ const Event = ({title, datetime, location}) => (
 );
 
 export default Event;
+
+export const CompactEvent = ({title, datetime, location}) => (
+  <article>
+    {format(datetime, 'M/d/y')} - <Title css={{display: 'inline'}}>{title}</Title> - {location}
+  </article>
+);
