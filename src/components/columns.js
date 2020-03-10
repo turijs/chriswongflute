@@ -13,8 +13,6 @@ const defaultBreakPoint = '600px';
 const Columns = ({n, gap, children}) => {
   if (typeof(n) !== 'object') n = {[n]: defaultBreakPoint};
 
-  console.log(n);
-
   let mqs = Object.entries(n).reduce((s, [colCount, breakpoint]) => {
     return s + `@media (min-width: ${breakpoint}) { grid-template-columns: repeat(${colCount}, 1fr); }`
   }, '');

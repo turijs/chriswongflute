@@ -6,19 +6,28 @@ import Container from '../components/container'
 import Youtube from '../components/youtube'
 
 
-const MediaPage = () => (
+const MediaPage = ({data: {markdownRemark: {frontmatter: {title, videos}}}}) => (
   <Layout>
-    <SEO title="Media" />
+    <SEO title={title} />
     <Container width="700px">
       <Article>
         <h1>Media</h1>
-        <Youtube videoId="Irhjjk1axW8" />
-        <Youtube videoId="urIvc9tqIKs" />
-        <Youtube videoId="9E1C8us5VPg" />
-        <Youtube videoId="RmYcitlAZ24" />
+        {videos.map(vid => <Youtube key={vid} videoId={vid} />)}
       </Article>
     </Container>
   </Layout>
 )
 
-export default MediaPage
+export default MediaPage;
+
+export const pageQuery = graphql`
+  query {
+    markdownRemark(fields: {path: {eq: "pages/media.md"}}) {
+      frontmatter {
+        title
+        videos
+      }
+      html
+    }
+  }
+`;

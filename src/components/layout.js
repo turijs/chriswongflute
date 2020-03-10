@@ -21,8 +21,8 @@ const Layout = ({ children, location }) => {
         }
       }
     }
-  `)
-  console.log(location)
+  `);
+  
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
