@@ -15,11 +15,11 @@ const events = {
   label_singular: 'Concert',
   folder: 'content/events',
   create: true,
-  slug: '{{year}}-{{month}}-{{day}}_{{slug}}',
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
   fields: [
     { name: 'title' },
     { name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', dateFormat: 'MM/DD/YYYY', timeFormat: false },
-    { name: 'time', widget: 'datetime', format: 'HH:mm', timeFormat: 'hh:mm a', dateFormat: false },
+    { name: 'time', widget: 'datetime', format: 'HH:mm', timeFormat: 'h:mm a', dateFormat: false },
     { name: 'location' }
   ]
 }

@@ -9,11 +9,6 @@ import SEO from '../components/seo'
 
 import {parse} from 'date-fns';
 
-function renderEvent({frontmatter: {title, date, time, location}, fields: {path}}, EventComp = Event) {
-  const datetime = parse(`${date} ${time}`, 'yyyy-MM-dd HH:mm', new Date());
-  return <EventComp key={path} title={title} datetime={datetime} location={location} />
-}
-
 const EventsPage = ({data}) => {  
   return (
     <Layout>
@@ -21,10 +16,16 @@ const EventsPage = ({data}) => {
       <Container width="700px">
         <Article>
           <h1>Concerts</h1>
-          {data.future.nodes.map(renderEvent)}
+          {data.future.nodes.map(({frontmatter: {title, date, time, location}, fields: {path}}) => {
+            const datetime = parse(`${date} ${time}`, 'yyyy-MM-dd HH:mm', new Date());
+            return <Event key={path} title={title} datetime={datetime} location={location} />
+          })}
 
           {data.past.nodes.length && <h2>Past</h2>}
-          {data.past.nodes.map(node => renderEvent(node, CompactEvent))}
+          {data.past.nodes.map(({frontmatter: {title, date, time, location}, fields: {path}}) => {
+            const datetime = parse(`${date} ${time}`, 'yyyy-MM-dd HH:mm', new Date());
+            return <CompactEvent key={path} title={title} datetime={datetime} location={location} />
+          })}
         </Article>
       </Container>
     </Layout>
