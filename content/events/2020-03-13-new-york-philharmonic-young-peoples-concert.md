@@ -1,6 +1,6 @@
 ---
-title: New York Philharmonic (Young People's Concert)
-date: '2019-12-07'
-time: '14:00'
-location: 'David Geffen Hall, Lincoln Center'
+title: United Nations Chamber Music Society
+date: '2020-03-03'
+time: '10:30'
+location: United Nations Headquarters
 ---
