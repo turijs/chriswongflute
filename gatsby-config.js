@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Chris Wong, Flute`,
-    description: `Chris wong is a NY flutist`,
-    author: `@gatsbyjs`,
+    description: `Chris is a Hong Kong based flute performer and educator`,
+    author: `Chris Wong`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
