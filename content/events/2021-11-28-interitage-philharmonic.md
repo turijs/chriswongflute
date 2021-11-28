@@ -1,6 +1,6 @@
 ---
-title: Interitage Philharmonic
-date: '2021-10-20'
+title: Hong Kopng Philharmonic Orchestra
+date: '2021-12-10'
 time: '20:00'
-location: 'Sha Tin Town Hall, Concert Hall, Hong Kong'
+location: 'Hong Kong Cultural Centre, Concert Hall'
 ---
